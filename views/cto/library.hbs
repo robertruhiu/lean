@@ -1,0 +1,72 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+
+    <h5>Project library</h5>
+</div>
+
+<!-- List group -->
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card createprojectcard" style="padding: 11px">
+
+                    <header>
+                        <h3>Crypto-price-watcher</h3>
+
+                    </header>
+
+                    <div>
+                        <p>Concept tested:
+                            <span class="badge badge-primary badge-pill" style="background: #007BFF">Web socket api</span>
+
+
+                        </p>
+                        <hr>
+
+                        <p>You have been approached by a client who has a healthy interest in Cryptocurrency. He wants
+                            to know how the various coins are performing against US Dollars. His Company is mostly
+                            interested in Bitcoin. What his team needs is a dashboard that shows the price of Bitcoin at
+                            any point in time without having to refresh the browser.
+                            They need the pricing information in realtime because that'd influence their decision
+                            whether to buy or sell.</p>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <a class="btn btn-primary" href="/custom" role="button">View project</a>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        {{# each night}}
+
+            <div class="row">
+
+                {{# each this}}
+                    <div class="col-lg-8">
+                        <div class="card createprojectcard" style="padding: 11px">
+                            <header>
+                                <h3>{{ this.projectname}}</h3>
+                            </header>
+                            <div>
+                                <p>Concept tested:
+                                    <span class="badge badge-primary badge-pill" style="background: #007BFF">{ this.concept}}</span>
+                                </p>
+                                <hr>
+                                <p>{{ this.description}}</p>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-primary" href="/custom/{{this._id}}" role="button">View project</a>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+
+        {{/each}}
+
+
+
+
+
+

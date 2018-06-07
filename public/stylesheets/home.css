@@ -1,0 +1,80 @@
+.codelnlogo {
+    padding-left: 0;
+    font-size: 19px;
+    letter-spacing: .4em;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: bold;
+    color: #2b63b7;
+    text-transform: uppercase;
+}
+.colorlink{
+    color: black;
+}
+.brandhome {
+    float: left;
+    padding: 16px 15px;
+    font-size: 20px;
+
+    height: 40px;
+    margin-left: 7%;
+}
+.rowalign{
+
+    margin-right: 0;
+    margin-left: 0;
+}
+
+
+.intro{
+    margin-top: 10%;
+
+}
+.jumbo{
+    margin-top: 1%;
+    margin-bottom: 0rem;
+    background-color: #ffffff;
+    border-radius: .0px;
+}
+.jumbo1{
+
+    background-color: #ffffff;
+    border-radius: .0px;
+    margin-top: -3%;
+}
+.jumbo2{
+
+    background-color: #e1f2f678;
+    border-radius: .0px;
+
+}
+.jumbofoot{
+    margin-top: 1%;
+    margin-bottom: 0rem;
+    background-color: #E8EBEF;
+    border-radius: .0px;
+}
+
+.beer1{
+    height: 100%;
+    width: 100%;
+}
+.nav-colored { background-color: #ffffff; }
+.nav-transparent { background-color:transparent;}
+.orient{
+    margin-right: 5%;
+}
+.how{
+    margin-right: 3%;
+}
+.noed{
+    border: 0px;
+}
+.fly{
+
+    border:0px
+}
+.benefit{
+    width:30%;
+    margin-bottom: 5%;
+
+}
