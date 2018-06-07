@@ -5,6 +5,7 @@ var Fullstack = require('./models/fullstack');
 var Devops = require('./models/devops');
 var Android = require('./models/android');
 var Ios = require('./models/ios');
+var Cart = require('../app/models/cart');
 
 var flash = require('connect-flash');
 var Profile = require('./models/profile');
@@ -73,7 +74,7 @@ module.exports = function (app, passport) {
     });
 
 
-    app.get('/custom',isLoggedIn , function (req, res, next) {
+    app.get('/custom', function (req, res, next) {
         res.render('cto/custom');
     });
     app.get('/requirements',isLoggedIn , function (req, res, next) {
@@ -114,6 +115,22 @@ module.exports = function (app, passport) {
             }
             res.render('projects/frontend', {project: projectChunks});
         });
+    });
+
+    app.get('/frontend/add-to-cart/:id', function (req, res) {
+        var productId = req.params.id;
+        var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+        Frontend.findById(productId, function (err, product) {
+            if (err) {
+                return res.redirect('/');
+            }
+            cart.add(product, product.id);
+            req.session.cart = cart;
+            console.log(cart);
+            res.redirect('/custom');
+        });
+
     });
 
     app.get('/backend', function (req, res) {
