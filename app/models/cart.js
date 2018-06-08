@@ -1,5 +1,5 @@
-module.exports = function Cart(oldCart) {
-    this.item = oldCart.item || {};
+module.exports = function Cart() {
+    this.item =  {};
 
 
     this.add = function (item, id) {

@@ -1,5 +1,25 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
     <h4>Project prerequisites</h4>
+    {{#if username}}
+
+    <div class="panel-body">
+      <p>Username: {{username.local.username}}</p>
+
+    </div>
+
+
+{{else}}
+
+
+    <p>Sign in and view your profile!</p>
+    <p>
+      <a href="/signin" class="btn btn-primary btn-lg" role="button">
+        <span class="glyphicon glyphicon-user"></span>
+        Sign in!
+      </a>
+    </p>
+
+{{/if}}
 </div>
 <div class="row">
     <div class="col-lg-12">
