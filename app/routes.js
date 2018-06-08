@@ -6,9 +6,10 @@ var Devops = require('./models/devops');
 var Android = require('./models/android');
 var Ios = require('./models/ios');
 var Cart = require('../app/models/cart');
-
+var Project = require('../app/models/project');
 var flash = require('connect-flash');
 var Profile = require('./models/profile');
+
 
 module.exports = function (app, passport) {
 
@@ -42,15 +43,15 @@ module.exports = function (app, passport) {
     }));
 
     app.get('/profile', function (req, res) {
-        var userId = req.params.id;
+        var username = req.user;
         var messages = req.flash('error');
-        res.render('users/profile', {layout: 'users',message: messages, hasErrors: messages.length >0 ,userId:userId});
+        res.render('users/profile', {layout: 'users',username:username,message: messages, hasErrors: messages.length >0 });
     });
 
     app.post('/profile',function (req,res) {
-
+        var username = req.user.local.username;
         var profile =new Profile({
-
+            user:username,
             username:req.body.username,
             company:req.body.company,
             position:req.body.position
@@ -64,37 +65,26 @@ module.exports = function (app, passport) {
     app.get('/index',isLoggedIn, function (req, res) {
         var username = req.user;
 
+
+
         res.render('cto/index',{username:username});
     });
 
     // process flow after project choice
-    app.get('/custom',isLoggedIn, function (req, res, next) {
-        var username = req.user;
 
-        res.render('cto/custom',{username:username});
-    });
 
-    app.get('/requirements',isLoggedIn , function (req, res, next) {
-        var username = req.user;
 
-        res.render('cto/require',{username:username});
-    });
 
-    app.get('/invites',isLoggedIn , function (req, res, next) {
-        var username = req.user;
 
-        res.render('cto/invites',{username:username});
-    });
 
-    app.get('/invoice',isLoggedIn , function (req, res, next) {
-        var username = req.user;
 
-        res.render('cto/payment',{username:username});
-    });
+
 
 
 
     // cto access to project
+
+
     app.get('/project',isLoggedIn , function (req, res, next) {
         var username = req.user;
 
@@ -131,6 +121,77 @@ module.exports = function (app, passport) {
             res.render('projects/frontend', {project: projectChunks,username:username});
         });
     });
+    // add to cart routes
+    app.get('/frontend/add-to-cart/:id',isLoggedIn, function (req, res) {
+        var productId = req.params.id;
+        var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+        Frontend.findById(productId, function (err, product) {
+            if (err) {
+                return res.redirect('/frontend');
+            }
+            cart.add(product, product.id);
+            req.session.cart = cart;
+
+            res.redirect('/custom');
+        });
+
+    });
+
+    app.get('/custom', isLoggedIn, function (req, res) {
+        var username = req.user;
+        if (!req.session.cart) {
+            res.render('cto/index', {products: null});
+        }
+        var cart = new Cart(req.session.cart);
+
+        res.render('cto/custom', {products: cart.generateArray(),username:username});
+    });
+
+
+     app.get('/requirements',isLoggedIn , function (req, res, next) {
+        var username = req.user;
+        if (!req.session.cart) {
+            res.render('cto/index', {products: null});
+        }
+        var cart = new Cart(req.session.cart);
+        res.render('cto/require',{products: cart.generateArray(),username:username});
+    });
+
+    app.get('/invites',isLoggedIn , function (req, res, next) {
+        var username = req.user;
+
+        res.render('cto/invites',{username:username});
+    });
+
+    app.get('/invoice',isLoggedIn , function (req, res, next) {
+        var username = req.user;
+
+        res.render('cto/payment',{username:username});
+    });
+    app.post('/invoice',isLoggedIn, function (req,res) {
+
+        var name = req.user.local.username;
+        var cart = new Cart(req.session.cart ? req.session.cart : {});
+        var project =new Project({
+            user:name,
+            cart:cart
+
+        });
+        project.save(function (err,result) {
+            req.session.cart=null;
+            res.redirect('/index')
+
+        })
+
+
+    });
+
+
+
+
+
+
 
     app.get('/backend',isLoggedIn, function (req, res) {
         var username = req.user;
@@ -192,22 +253,10 @@ module.exports = function (app, passport) {
         });
     });
 
-    // add to cart routes
-    app.get('/frontend/add-to-cart/:id',isLoggedIn, function (req, res) {
-        var productId = req.params.id;
-        var cart = new Cart(req.session.cart ? req.session.cart : {});
 
-        Frontend.findById(productId, function (err, product) {
-            if (err) {
-                return res.redirect('/frontend');
-            }
-            cart.add(product, product.id);
-            req.session.cart = cart;
-            console.log(cart);
-            res.redirect('/custom');
-        });
 
-    });
+
+
 
 
 
