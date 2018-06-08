@@ -64,10 +64,18 @@
     margin-right: 5%;
 }
 .how{
-    margin-right: 3%;
+    min-width: 20%;
 }
 .noed{
     border: 0px;
+
+}
+.yum{
+    width: 100%;
+
+}
+.howcard{
+    width:100%
 }
 .fly{
 
@@ -77,4 +85,11 @@
     width:30%;
     margin-bottom: 5%;
 
+}
+.lang{
+
+    border: 0px solid rgba(0,0,0,.125);
+}
+.how2{
+    margin-left: 7%;
 }
