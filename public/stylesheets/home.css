@@ -87,9 +87,12 @@
 
 }
 .lang{
-
+    width: 40%;
     border: 0px solid rgba(0,0,0,.125);
 }
 .how2{
     margin-left: 7%;
+}
+.mel{
+
 }
