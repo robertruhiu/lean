@@ -49,12 +49,14 @@ module.exports = function (app, passport) {
     });
 
     app.post('/profile',function (req,res) {
-        var username = req.user.local.username;
+
+        var username = req.user;
         var profile =new Profile({
             user:username,
             username:req.body.username,
             company:req.body.company,
             position:req.body.position
+
         });
         profile.save(function (err,result) {
             res.redirect('/index')
@@ -64,10 +66,22 @@ module.exports = function (app, passport) {
 
     app.get('/index',isLoggedIn, function (req, res) {
         var username = req.user;
+        Project.find({user:req.user},function (err,projects) {
+            if (err) {
+                return res.write('Error');
+            }
+            var cart;
+            projects.forEach(function (project) {
+                cart = new Cart(project.cart);
+                project.items = cart.generateArray();
+
+            });
+            res.render('cto/index',{username:username,projects:projects});
 
 
+        });
 
-        res.render('cto/index',{username:username});
+
     });
 
     // process flow after project choice
@@ -171,8 +185,9 @@ module.exports = function (app, passport) {
     });
     app.post('/invoice',isLoggedIn, function (req,res) {
 
-        var name = req.user.local.username;
+        var name = req.user;
         var cart = new Cart(req.session.cart ? req.session.cart : {});
+
         var project =new Project({
             user:name,
             cart:cart

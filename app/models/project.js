@@ -1,8 +1,9 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 var projectSchema = mongoose.Schema;
 
 var project = new projectSchema({
-    user:{type:String,required:true},
+    user:{type:Schema.Types.ObjectId,ref:'User'},
     cart:{type:Object,required:true}
 
 

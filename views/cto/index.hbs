@@ -93,15 +93,20 @@
     <h5>Projects ongoing </h5><br>
 
 </div>
-<div class="row">
-    <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Project title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">type frontend</h6>
-    <p class="card-text">Candidates 20</p>
+<!--projects here-->
 
-  </div>
-</div>
+<div class="row">
+    {{# each projects}}
+    {{# each this.items}}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{this.item.projectname}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">type frontend</h6>
+            <p class="card-text">Candidates 20</p>
+        </div>
+    </div>
+        {{/each}}
+        {{/each}}
 
 
 </div>
