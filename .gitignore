@@ -3,3 +3,5 @@ temp.html
 /seed
 /node_modules
 /.idea
+/app/models/failsafe.js
+/app/models/routesfailsafe.js

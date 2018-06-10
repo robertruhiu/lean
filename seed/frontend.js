@@ -6,7 +6,7 @@ mongoose.connect(configDB.url);
 var projects = [
     new Frontend({
         imagePath: 'https://codeln.herokuapp.com/images/capture.PNG',
-        projectname: 'Crypto-price-watcher',
+        projectname: 'project1',
         concept:'Web socket api',
         description:'You have been approached by a client who has a healthy interest in Cryptocurrency',
         basic1:'Improved UI/UX',
@@ -20,7 +20,7 @@ var projects = [
     }),
     new Frontend({
         imagePath: 'https://codeln.herokuapp.com/images/capture.PNG',
-        projectname: 'Crypto-price-watcher',
+        projectname: 'project2',
         concept:'Web socket api',
         description:'You have been approached by a client who has a healthy interest in Cryptocurrency',
         basic1:'Improved UI/UX',
@@ -34,7 +34,7 @@ var projects = [
     }),
     new Frontend({
         imagePath: 'https://codeln.herokuapp.com/images/capture.PNG',
-        projectname: 'Crypto-price-watcher',
+        projectname: 'project3',
         concept:'Web socket api',
         description:'You have been approached by a client who has a healthy interest in Cryptocurrency',
         basic1:'Improved UI/UX',
@@ -48,7 +48,7 @@ var projects = [
     }),
     new Frontend({
         imagePath: 'https://codeln.herokuapp.com/images/capture.PNG',
-        projectname: 'Crypto-price-watcher',
+        projectname: 'project4',
         concept:'Web socket api',
         description:'You have been approached by a client who has a healthy interest in Cryptocurrency',
         basic1:'Improved UI/UX',
@@ -62,7 +62,7 @@ var projects = [
     }),
     new Frontend({
         imagePath: 'https://codeln.herokuapp.com/images/capture.PNG',
-        projectname: 'Crypto-price-watcher',
+        projectname: 'project5',
         concept:'Web socket api',
         description:'You have been approached by a client who has a healthy interest in Cryptocurrency',
         basic1:'Improved UI/UX',
@@ -76,7 +76,7 @@ var projects = [
     }),
     new Frontend({
         imagePath: 'https://codeln.herokuapp.com/images/capture.PNG',
-        projectname: 'Crypto-price-watcher',
+        projectname: 'project6',
         concept:'Web socket api',
         description:'You have been approached by a client who has a healthy interest in Cryptocurrency',
         basic1:'Improved UI/UX',
@@ -87,7 +87,7 @@ var projects = [
         advanced2:'Allow users to set up alerts for a certain price point'
 
 
-    }),
+    })
 
 
 ];

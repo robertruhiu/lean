@@ -147,21 +147,17 @@ module.exports = function (app, passport) {
             cart.add(product, product.id);
             req.session.cart = cart;
 
-
             res.redirect('/custom');
         });
 
     });
 
-
     app.get('/custom', isLoggedIn, function (req, res) {
         var username = req.user;
-        var cart = new Cart(req.session.cart ? req.session.cart : {});
         if (!req.session.cart) {
             res.render('cto/index', {products: null});
         }
         var cart = new Cart(req.session.cart);
-        console.log(cart);
 
         res.render('cto/custom', {products: cart.generateArray(),username:username});
     });
