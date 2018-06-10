@@ -64,6 +64,11 @@ module.exports = function (app, passport) {
 
     });
 
+    app.get('/pricing', function (req, res) {
+
+        res.render('landing/pricing',{layout: 'homelayout'});
+    });
+
     app.get('/index',isLoggedIn, function (req, res) {
         var username = req.user;
         Project.find({user:req.user},function (err,projects) {

@@ -47,6 +47,13 @@
     border-radius: .0px;
 
 }
+.jumbo3{
+
+    background-color: rgba(255, 255, 255, 0.47);
+    border-radius: .0px;
+    height: 35vmax;
+
+}
 .jumbofoot{
     margin-top: 1%;
     margin-bottom: 0rem;
@@ -95,4 +102,18 @@
 }
 .ml{
     border-radius: 0px;
+}
+.price{
+    height:100% ;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    width: 28%;
+    margin-left: 37%
+}
+.lis {
+    position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    /* border: 1px solid rgba(0,0,0,.125); */
 }
