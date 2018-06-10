@@ -11,6 +11,7 @@ module.exports = function Cart(oldCart) {
             storedItem = this.item[id] ={
                     item:item ,
                     name:item.projectname,
+                    type:item.type,
                     picture:item.imagePath,
                     concept:item.concept,
                     description:item.description,

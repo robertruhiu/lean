@@ -7,6 +7,7 @@ var projects = [
     new Frontend({
         imagePath: 'https://codeln.herokuapp.com/images/capture.PNG',
         projectname: 'project1',
+        type:'frontend',
         concept:'Web socket api',
         description:'You have been approached by a client who has a healthy interest in Cryptocurrency',
         basic1:'Improved UI/UX',
@@ -21,6 +22,7 @@ var projects = [
     new Frontend({
         imagePath: 'https://codeln.herokuapp.com/images/capture.PNG',
         projectname: 'project2',
+        type:'frontend',
         concept:'Web socket api',
         description:'You have been approached by a client who has a healthy interest in Cryptocurrency',
         basic1:'Improved UI/UX',
@@ -35,6 +37,7 @@ var projects = [
     new Frontend({
         imagePath: 'https://codeln.herokuapp.com/images/capture.PNG',
         projectname: 'project3',
+        type:'frontend',
         concept:'Web socket api',
         description:'You have been approached by a client who has a healthy interest in Cryptocurrency',
         basic1:'Improved UI/UX',
@@ -49,6 +52,7 @@ var projects = [
     new Frontend({
         imagePath: 'https://codeln.herokuapp.com/images/capture.PNG',
         projectname: 'project4',
+        type:'frontend',
         concept:'Web socket api',
         description:'You have been approached by a client who has a healthy interest in Cryptocurrency',
         basic1:'Improved UI/UX',
@@ -63,6 +67,7 @@ var projects = [
     new Frontend({
         imagePath: 'https://codeln.herokuapp.com/images/capture.PNG',
         projectname: 'project5',
+        type:'frontend',
         concept:'Web socket api',
         description:'You have been approached by a client who has a healthy interest in Cryptocurrency',
         basic1:'Improved UI/UX',
@@ -77,6 +82,7 @@ var projects = [
     new Frontend({
         imagePath: 'https://codeln.herokuapp.com/images/capture.PNG',
         projectname: 'project6',
+        type:'frontend',
         concept:'Web socket api',
         description:'You have been approached by a client who has a healthy interest in Cryptocurrency',
         basic1:'Improved UI/UX',

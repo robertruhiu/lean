@@ -84,21 +84,6 @@ module.exports = function (app, passport) {
 
     });
 
-    // process flow after project choice
-
-
-
-
-
-
-
-
-
-
-
-    // cto access to project
-
-
     app.get('/project',isLoggedIn , function (req, res, next) {
         var username = req.user;
 
@@ -106,10 +91,11 @@ module.exports = function (app, passport) {
     });
 
     app.get('/fullreport',isLoggedIn , function (req, res, next) {
-        var username = req.user;
 
-        res.render('cto/fullreport' ,{layout: 'reportlayout',username:username});
-    });
+
+        res.render('cto/fullreport' ,{layout: 'reportlayout'});
+    })
+
     //candidates routes
     app.get('/candidate',isLoggedIn ,function (req, res, next) {
         var username = req.user;
@@ -124,6 +110,7 @@ module.exports = function (app, passport) {
     });
 
     // content rendering and fetching of projects
+
     app.get('/frontend', isLoggedIn,function (req, res) {
         var username = req.user;
         Frontend.find({}, function (err, docs) {
@@ -135,7 +122,6 @@ module.exports = function (app, passport) {
             res.render('projects/frontend', {project: projectChunks,username:username});
         });
     });
-    // add to cart routes
     app.get('/frontend/add-to-cart/:id',isLoggedIn, function (req, res) {
         var productId = req.params.id;
         var cart = new Cart(req.session.cart ? req.session.cart : {});
@@ -154,7 +140,153 @@ module.exports = function (app, passport) {
     });
 
 
-    app.get('/custom', isLoggedIn, function (req, res) {
+    app.get('/backend',isLoggedIn, function (req, res) {
+        var username = req.user;
+        Backend.find({}, function (err, docs) {
+            var projectChunks = [];
+            var chunkSize = 2;
+            for (var i = 0; i < docs.length; i += chunkSize) {
+                projectChunks.push(docs.slice(i, i + chunkSize));
+            }
+            res.render('projects/backend', {project: projectChunks,username:username});
+        });
+    });
+    app.get('/backend/add-to-cart/:id',isLoggedIn, function (req, res) {
+        var productId = req.params.id;
+        var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+        Backend.findById(productId, function (err, product) {
+            if (err) {
+                return res.redirect('/backend');
+            }
+            cart.add(product, product.id);
+            req.session.cart = cart;
+
+
+            res.redirect('/custom');
+        });
+
+    });
+
+
+    app.get('/fullstack',isLoggedIn, function (req, res) {
+        var username = req.user;
+        Fullstack.find({}, function (err, docs) {
+            var projectChunks = [];
+            var chunkSize = 2;
+            for (var i = 0; i < docs.length; i += chunkSize) {
+                projectChunks.push(docs.slice(i, i + chunkSize));
+            }
+            res.render('projects/fullstack', {project: projectChunks,username:username});
+        });
+    });
+    app.get('/fullstack/add-to-cart/:id',isLoggedIn, function (req, res) {
+        var productId = req.params.id;
+        var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+        Fullstack.findById(productId, function (err, product) {
+            if (err) {
+                return res.redirect('/fullstack');
+            }
+            cart.add(product, product.id);
+            req.session.cart = cart;
+
+
+            res.redirect('/custom');
+        });
+
+    });
+
+
+    app.get('/devops', isLoggedIn,function (req, res) {
+        var username = req.user;
+        Devops.find({}, function (err, docs) {
+            var projectChunks = [];
+            var chunkSize = 2;
+            for (var i = 0; i < docs.length; i += chunkSize) {
+                projectChunks.push(docs.slice(i, i + chunkSize));
+            }
+            res.render('projects/devops', {project: projectChunks,username:username});
+        });
+    });
+    app.get('/devops/add-to-cart/:id',isLoggedIn, function (req, res) {
+        var productId = req.params.id;
+        var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+        Devops.findById(productId, function (err, product) {
+            if (err) {
+                return res.redirect('/devops');
+            }
+            cart.add(product, product.id);
+            req.session.cart = cart;
+
+
+            res.redirect('/custom');
+        });
+
+    });
+
+    app.get('/android',isLoggedIn, function (req, res) {
+        var username = req.user;
+        Android.find({}, function (err, docs) {
+            var projectChunks = [];
+            var chunkSize = 2;
+            for (var i = 0; i < docs.length; i += chunkSize) {
+                projectChunks.push(docs.slice(i, i + chunkSize));
+            }
+            res.render('projects/android', {project: projectChunks,username:username});
+        });
+    });
+    app.get('/android/add-to-cart/:id',isLoggedIn, function (req, res) {
+        var productId = req.params.id;
+        var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+        Android.findById(productId, function (err, product) {
+            if (err) {
+                return res.redirect('/android');
+            }
+            cart.add(product, product.id);
+            req.session.cart = cart;
+
+
+            res.redirect('/custom');
+        });
+
+    });
+
+    app.get('/ios', isLoggedIn,function (req, res) {
+        var username = req.user;
+        Ios.find({}, function (err, docs) {
+            var projectChunks = [];
+            var chunkSize = 2;
+            for (var i = 0; i < docs.length; i += chunkSize) {
+                projectChunks.push(docs.slice(i, i + chunkSize));
+            }
+            res.render('projects/ios', {project: projectChunks,username:username});
+        });
+    });
+    app.get('/ios/add-to-cart/:id',isLoggedIn, function (req, res) {
+        var productId = req.params.id;
+        var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+        Ios.findById(productId, function (err, product) {
+            if (err) {
+                return res.redirect('/ios');
+            }
+            cart.add(product, product.id);
+            req.session.cart = cart;
+
+
+            res.redirect('/custom');
+        });
+
+    });
+
+
+
+    // acted after project selected
+
+     app.get('/custom', isLoggedIn, function (req, res) {
         var username = req.user;
         var cart = new Cart(req.session.cart ? req.session.cart : {});
         if (!req.session.cart) {
@@ -167,7 +299,7 @@ module.exports = function (app, passport) {
     });
 
 
-     app.get('/requirements',isLoggedIn , function (req, res, next) {
+    app.get('/requirements',isLoggedIn , function (req, res, next) {
         var username = req.user;
         if (!req.session.cart) {
             res.render('cto/index', {products: null});
@@ -204,72 +336,6 @@ module.exports = function (app, passport) {
         })
 
 
-    });
-
-
-
-
-
-
-
-    app.get('/backend',isLoggedIn, function (req, res) {
-        var username = req.user;
-        Backend.find({}, function (err, docs) {
-            var projectChunks = [];
-            var chunkSize = 2;
-            for (var i = 0; i < docs.length; i += chunkSize) {
-                projectChunks.push(docs.slice(i, i + chunkSize));
-            }
-            res.render('projects/backend', {project: projectChunks,username:username});
-        });
-    });
-
-    app.get('/fullstack',isLoggedIn, function (req, res) {
-        var username = req.user;
-        Fullstack.find({}, function (err, docs) {
-            var projectChunks = [];
-            var chunkSize = 2;
-            for (var i = 0; i < docs.length; i += chunkSize) {
-                projectChunks.push(docs.slice(i, i + chunkSize));
-            }
-            res.render('projects/fullstack', {project: projectChunks,username:username});
-        });
-    });
-
-    app.get('/devops', isLoggedIn,function (req, res) {
-        var username = req.user;
-        Devops.find({}, function (err, docs) {
-            var projectChunks = [];
-            var chunkSize = 2;
-            for (var i = 0; i < docs.length; i += chunkSize) {
-                projectChunks.push(docs.slice(i, i + chunkSize));
-            }
-            res.render('projects/devops', {project: projectChunks,username:username});
-        });
-    });
-
-    app.get('/android',isLoggedIn, function (req, res) {
-        var username = req.user;
-        Android.find({}, function (err, docs) {
-            var projectChunks = [];
-            var chunkSize = 2;
-            for (var i = 0; i < docs.length; i += chunkSize) {
-                projectChunks.push(docs.slice(i, i + chunkSize));
-            }
-            res.render('projects/android', {project: projectChunks,username:username});
-        });
-    });
-
-    app.get('/ios', isLoggedIn,function (req, res) {
-        var username = req.user;
-        Ios.find({}, function (err, docs) {
-            var projectChunks = [];
-            var chunkSize = 2;
-            for (var i = 0; i < docs.length; i += chunkSize) {
-                projectChunks.push(docs.slice(i, i + chunkSize));
-            }
-            res.render('projects/ios', {project: projectChunks,username:username});
-        });
     });
 
 
