@@ -23,44 +23,44 @@
 {{/if}}
 </div>
         {{# if products }}
-        <div class="card cardno">
+            <div class="row">
             {{# each products}}
-
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="text-center"><strong>Basic features</strong></div>
-                        <ul>
-                            <li>{{this.basic1}}</li>
-                            <li>{{this.basic2}}</li>
-                            <li>{{this.basic3}}</li>
-                            <li>{{this.basic4}}
+                <div class="col-lg-6">
+                    <div class="card cardno">
+                        <div class="card-body">
+                            <div class="text-center h5"><strong>Basic features</strong></div>
+                            <ul>
+                            <li class="h6">{{this.basic1}}</li>
+                            <li class="h6">{{this.basic2}}</li>
+                            <li class="h6">{{this.basic3}}</li>
+                            <li class="h6">{{this.basic4}}
                             </li>
                         </ul>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="text-center"><strong>Advanced features</strong></div>
-                        <ul>
-                            <li>{{this.advanced1}}</li>
-                            <li>{{this.advanced2}}</li>
-
-                        </ul>
-
+                        </div>
                     </div>
                 </div>
-                {{/each}}
+                 <div class="col-lg-6">
+                     <div class="card cardno">
+                         <div class="card-body">
+                             <div class="text-center h5"><strong>Advanced features</strong></div>
+                             <ul>
+                                 <li class="h6">{{this.advanced1}}</li>
+                                 <li class="h6">{{this.advanced2}}</li>
+                             </ul>
+                             <div class="row" style="margin-top: 35%;">
+                                 <div class="col-lg-12">
+                                     <div class="d-flex justify-content-end">
+                                         <a class="btn btn-primary" href="/custom" role="button">Previous</a>
+                                         <a class="btn btn-primary" style="margin-left: 5%" href="/invites" role="button">Next</a>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+            {{/each}}
 
-                <div class="row">
-            <div class="col-lg-12">
-                <div class="d-flex justify-content-end">
-                    <a class="btn btn-primary" href="/custom" role="button">Previous</a>
-                    <a class="btn btn-primary" style="margin-left: 5%" href="/invites" role="button">Next</a>
-                </div>
-            </div>
 
-        </div>
-            </div>
-        </div>
         {{else}}
             <div class="row">
                 <div class="col-sm-6 col-md-6">

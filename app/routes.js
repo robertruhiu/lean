@@ -11,6 +11,7 @@ var flash = require('connect-flash');
 var Profile = require('./models/profile');
 
 
+
 module.exports = function (app, passport) {
 
 
@@ -31,12 +32,6 @@ module.exports = function (app, passport) {
         failureFlash: true
     }));
 
-
-    app.get('/logincandidate', function (req, res) {
-        var messages = req.flash('error');
-        res.render('users/candidatelogin', {layout: 'users',message: messages, hasErrors: messages.length >0 });
-    });
-
     app.post('/logincandidate', passport.authenticate('local-login', {
         successRedirect: '/candidate',
         failureRedirect: '/logincandidate',
@@ -56,6 +51,12 @@ module.exports = function (app, passport) {
     }));
 
     app.get('/profile', function (req, res) {
+
+    app.get('/logincandidate', function (req, res) {
+        var messages = req.flash('error');
+        res.render('users/candidatelogin', {layout: 'users',message: messages, hasErrors: messages.length >0 });
+    });
+
         var username = req.user;
         var messages = req.flash('error');
         res.render('users/profile', {layout: 'users',username:username,message: messages, hasErrors: messages.length >0 });
@@ -112,7 +113,7 @@ module.exports = function (app, passport) {
 
 
         res.render('cto/fullreport' ,{layout: 'reportlayout'});
-    })
+    });
 
     //candidates routes
     app.get('/candidate',isLoggedIn ,function (req, res, next) {
@@ -307,10 +308,13 @@ module.exports = function (app, passport) {
      app.get('/custom', isLoggedIn, function (req, res) {
         var username = req.user;
         var cart = new Cart(req.session.cart ? req.session.cart : {});
+
         if (!req.session.cart) {
             res.render('cto/index', {products: null});
         }
+
         var cart = new Cart(req.session.cart);
+
         console.log(cart);
 
         res.render('cto/custom', {products: cart.generateArray(),username:username});
@@ -328,9 +332,14 @@ module.exports = function (app, passport) {
 
     app.get('/invites',isLoggedIn , function (req, res, next) {
         var username = req.user;
+        if (!req.session.cart) {
+            res.render('cto/index', {products: null});
+        }
+
 
         res.render('cto/invites',{username:username});
     });
+
 
     app.get('/invoice',isLoggedIn , function (req, res, next) {
         var username = req.user;
@@ -343,8 +352,7 @@ module.exports = function (app, passport) {
         var cart = new Cart(req.session.cart ? req.session.cart : {});
 
         var project =new Project({
-            user:name,
-            cart:cart
+
 
         });
         project.save(function (err,result) {

@@ -20,6 +20,7 @@ require('./config/passport')(passport);
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 
 var configDB = require('./config/database.js');
