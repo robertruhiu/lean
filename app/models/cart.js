@@ -22,11 +22,16 @@ module.exports = function Cart(oldCart) {
                     basic4:item.basic4,
                     advanced1:item.advanced1,
                     advanced2:item.advanced2,
-                    language:item.language,
-                    framework:item.framework,
-                    database:item.database,
-                    vcs:item.vcs,
-                    time:item.time
+                    constrain1:item.constrain1,
+                constrain2:item.constrain2,
+                constrain3:item.constrain3,
+                constrain4:item.constrain4,
+                constrain5:item.constrain5,
+                constrain6:item.constrain6,
+                constrain7:item.constrain7,
+                constrain8:item.constrain8,
+                constrain9:item.constrain9,
+                constrain10:item.constrain10
 
 
 
