@@ -23,15 +23,15 @@ module.exports = function Cart(oldCart) {
                     advanced1:item.advanced1,
                     advanced2:item.advanced2,
                     constrain1:item.constrain1,
-                constrain2:item.constrain2,
-                constrain3:item.constrain3,
-                constrain4:item.constrain4,
-                constrain5:item.constrain5,
-                constrain6:item.constrain6,
-                constrain7:item.constrain7,
-                constrain8:item.constrain8,
-                constrain9:item.constrain9,
-                constrain10:item.constrain10
+                    constrain2:item.constrain2,
+                    constrain3:item.constrain3,
+                    constrain4:item.constrain4,
+                    constrain5:item.constrain5,
+                    constrain6:item.constrain6,
+                    constrain7:item.constrain7,
+                    constrain8:item.constrain8,
+                    constrain9:item.constrain9,
+                    constrain10:item.constrain10
 
 
 

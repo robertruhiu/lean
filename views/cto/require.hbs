@@ -26,7 +26,7 @@
             <div class="row">
             {{# each products}}
                 <div class="col-lg-4">
-                    <div class="card cardno">
+                    <div class="card cardno1">
                         <div class="card-body">
                             <div class="text-center h5"><strong>Basic features</strong></div>
                             <p class="h6">{{this.basic1}}</p>
@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="card cardno">
+                    <div class="card cardno1">
                         <div class="card-body">
                             <div class="text-center h5"><strong>Constrains</strong></div>
                             <p class="h6">{{this.constrain1}}</p>
@@ -56,23 +56,19 @@
                     </div>
                 </div>
                  <div class="col-lg-4">
-                     <div class="card cardno">
+                     <div class="card cardno1">
                          <div class="card-body">
                              <div class="text-center h5"><strong>Advanced features</strong></div>
                              <p class="h6">{{this.advanced1}}</p>
-                             <p class="h6">{{this.advanced1}}</p>
+                             <p class="h6">{{this.advanced2}}</p>
 
-                             <div class="row" style="margin-top: 200px;">
-                                 <div class="col-lg-12">
-                                     <div class="d-flex justify-content-end">
-                                         <a class="btn btn-primary" href="/custom" role="button">Previous</a>
-                                         <a class="btn btn-primary" style="margin-left: 5%" href="/invites" role="button">Next</a>
-                                     </div>
-                                 </div>
-                             </div>
                          </div>
                      </div>
                  </div>
+                <div class="float-right" style="margin-left: 84%">
+                    <a class="btn btn-primary "   href="/custom" role="button">Previous</a>
+                    <a class="btn btn-success"  href="/invites" role="button">Next</a>
+                </div>
             {{/each}}
 
 
