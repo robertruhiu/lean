@@ -6,10 +6,10 @@ mongoose.connect(configDB.url);
 var projects = [
     new Frontend({
         imagePath: 'https://codeln.herokuapp.com/images/capture.PNG',
-        projectname: 'project1',
+        projectname: 'Crypto-price watcher',
         type:'frontend',
         concept:'Web socket api',
-        description:'You have been approached by a client who has a healthy interest in Cryptocurrency',
+        description:'You have been approached by a client who has a healthy interest in Cryptocurrency. He wants to know how the various coins are performing against US Dollars. His Company is mostly interested in Bitcoin. What his team needs is a dashboard that shows the price of Bitcoin at any point in time without having to refresh the browser. They need the pricing information in realtime because that\'d influence their decision whether to buy or sell.',
         basic1:'Improved UI/UX',
         basic2:'Sign up for users at your Client\'s company',
         basic3:'Login (you are free to use a package such as Passport for Authentication)',
@@ -23,87 +23,8 @@ var projects = [
         time:'4 hrs'
 
 
-    }),
-    new Frontend({
-        imagePath: 'https://codeln.herokuapp.com/images/capture.PNG',
-        projectname: 'project2',
-        type:'frontend',
-        concept:'Web socket api',
-        description:'You have been approached by a client who has a healthy interest in Cryptocurrency',
-        basic1:'Improved UI/UX',
-        basic2:'Sign up for users at your Client\'s company',
-        basic3:'Login (you are free to use a package such as Passport for Authentication)',
-        basic4:'Integration with at least 3 exchanges (with Websocket API for their market data). Examples of such exchanges are Bitstamp, OKCoin, etc.',
-        advanced1:'Persist the market data in a PostgreSQL database (node-postgres)',
-        advanced2:'Allow users to set up alerts for a certain price point',
-        language:'Javascript',
-        framework:'express js',
-        database:'mongo',
-        vcs:'git',
-        time:'4 hrs'
+    })
 
-
-    }),
-    new Frontend({
-        imagePath: 'https://codeln.herokuapp.com/images/capture.PNG',
-        projectname: 'project3',
-        type:'frontend',
-        concept:'Web socket api',
-        description:'You have been approached by a client who has a healthy interest in Cryptocurrency',
-        basic1:'Improved UI/UX',
-        basic2:'Sign up for users at your Client\'s company',
-        basic3:'Login (you are free to use a package such as Passport for Authentication)',
-        basic4:'Integration with at least 3 exchanges (with Websocket API for their market data). Examples of such exchanges are Bitstamp, OKCoin, etc.',
-        advanced1:'Persist the market data in a PostgreSQL database (node-postgres)',
-        advanced2:'Allow users to set up alerts for a certain price point',
-        language:'Javascript',
-        framework:'express js',
-        database:'mongo',
-        vcs:'git',
-        time:'4 hrs'
-
-
-    }),
-    new Frontend({
-        imagePath: 'https://codeln.herokuapp.com/images/capture.PNG',
-        projectname: 'project4',
-        type:'frontend',
-        concept:'Web socket api',
-        description:'You have been approached by a client who has a healthy interest in Cryptocurrency',
-        basic1:'Improved UI/UX',
-        basic2:'Sign up for users at your Client\'s company',
-        basic3:'Login (you are free to use a package such as Passport for Authentication)',
-        basic4:'Integration with at least 3 exchanges (with Websocket API for their market data). Examples of such exchanges are Bitstamp, OKCoin, etc.',
-        advanced1:'Persist the market data in a PostgreSQL database (node-postgres)',
-        advanced2:'Allow users to set up alerts for a certain price point',
-        language:'Javascript',
-        framework:'express js',
-        database:'mongo',
-        vcs:'git',
-        time:'4 hrs'
-
-
-    }),
-    new Frontend({
-        imagePath: 'https://codeln.herokuapp.com/images/capture.PNG',
-        projectname: 'project5',
-        type:'frontend',
-        concept:'Web socket api',
-        description:'You have been approached by a client who has a healthy interest in Cryptocurrency',
-        basic1:'Improved UI/UX',
-        basic2:'Sign up for users at your Client\'s company',
-        basic3:'Login (you are free to use a package such as Passport for Authentication)',
-        basic4:'Integration with at least 3 exchanges (with Websocket API for their market data). Examples of such exchanges are Bitstamp, OKCoin, etc.',
-        advanced1:'Persist the market data in a PostgreSQL database (node-postgres)',
-        advanced2:'Allow users to set up alerts for a certain price point',
-        language:'Javascript',
-        framework:'express js',
-        database:'mongo',
-        vcs:'git',
-        time:'4 hrs'
-
-
-    }),
 
 
 ];

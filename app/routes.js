@@ -352,6 +352,8 @@ module.exports = function (app, passport) {
         var cart = new Cart(req.session.cart ? req.session.cart : {});
 
         var project =new Project({
+            user:name,
+            cart:cart
 
 
         });

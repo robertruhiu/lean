@@ -98,14 +98,16 @@ body {
 }
 
 .card1 {
-    height: 153px;
+    height: 130px;
     width: 100%;
     border-radius: 0;
+
 }
 
 .cardtitle1 {
     margin-top: 35px;
-    margin-left: 20%;
+    margin-left: 30%;
+
 }
 
 .card2 {
@@ -299,9 +301,8 @@ a, a:hover, a:focus {
 
 }
 
-.card {
-    background: #FFF none repeat scroll 0% 0%;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+.leo{
+    border: 0px;
 }
 
 input[type="text"],
