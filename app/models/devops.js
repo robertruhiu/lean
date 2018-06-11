@@ -10,14 +10,18 @@ var devops = new devopsSchema({
     basic1:{type: String, required: true},
     basic2:{type: String, required: true},
     basic3:{type: String, required: true},
-    basic4:{type: String, required: true},
-    advanced1:{type:String, required: true},
-    advanced2:{type:String, required: true},
-    language:{type:String, required: true},
-    framework:{type:String, required: true},
-    database:{type:String, required: true},
-    vcs:{type:String, required: true},
-    time:{type:String, required: true}
+    constrain1:{type:String, required: true},
+    constrain2:{type:String, required: true},
+    constrain3:{type:String, required: true},
+    constrain4:{type:String, required: true},
+    constrain5:{type:String, required: true},
+    constrain6:{type:String, required: true},
+    constrain7:{type:String, required: true},
+    constrain8:{type:String, required: true},
+    constrain9:{type:String, required: true},
+    constrain10:{type:String, required: true}
+
+
 });
 
 

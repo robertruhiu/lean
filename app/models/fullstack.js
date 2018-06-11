@@ -11,13 +11,8 @@ var fullstack = new fullstackSchema({
     basic2:{type: String, required: true},
     basic3:{type: String, required: true},
     basic4:{type: String, required: true},
-    advanced1:{type:String, required: true},
-    advanced2:{type:String, required: true},
-    language:{type:String, required: true},
-    framework:{type:String, required: true},
-    database:{type:String, required: true},
-    vcs:{type:String, required: true},
-    time:{type:String, required: true}
+    advanced1:{type:String, required: true}
+
 
 });
 

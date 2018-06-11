@@ -240,71 +240,31 @@ module.exports = function (app, passport) {
             req.session.cart = cart;
 
 
-            res.redirect('/custom');
+            res.redirect('/customdevops');
         });
 
     });
 
-    app.get('/android',isLoggedIn, function (req, res) {
-        var username = req.user;
-        Android.find({}, function (err, docs) {
-            var projectChunks = [];
-            var chunkSize = 2;
-            for (var i = 0; i < docs.length; i += chunkSize) {
-                projectChunks.push(docs.slice(i, i + chunkSize));
-            }
-            res.render('projects/android', {project: projectChunks,username:username});
-        });
-    });
-    app.get('/android/add-to-cart/:id',isLoggedIn, function (req, res) {
-        var productId = req.params.id;
-        var cart = new Cart(req.session.cart ? req.session.cart : {});
-
-        Android.findById(productId, function (err, product) {
-            if (err) {
-                return res.redirect('/android');
-            }
-            cart.add(product, product.id);
-            req.session.cart = cart;
 
 
-            res.redirect('/custom');
-        });
-
-    });
-
-    app.get('/ios', isLoggedIn,function (req, res) {
-        var username = req.user;
-        Ios.find({}, function (err, docs) {
-            var projectChunks = [];
-            var chunkSize = 2;
-            for (var i = 0; i < docs.length; i += chunkSize) {
-                projectChunks.push(docs.slice(i, i + chunkSize));
-            }
-            res.render('projects/ios', {project: projectChunks,username:username});
-        });
-    });
-    app.get('/ios/add-to-cart/:id',isLoggedIn, function (req, res) {
-        var productId = req.params.id;
-        var cart = new Cart(req.session.cart ? req.session.cart : {});
-
-        Ios.findById(productId, function (err, product) {
-            if (err) {
-                return res.redirect('/ios');
-            }
-            cart.add(product, product.id);
-            req.session.cart = cart;
-
-
-            res.redirect('/custom');
-        });
-
-    });
 
 
 
     // acted after project selected
+    app.get('/customdevops', isLoggedIn, function (req, res) {
+        var username = req.user;
+        var cart = new Cart(req.session.cart ? req.session.cart : {});
 
+        if (!req.session.cart) {
+            res.render('cto/index', {products: null});
+        }
+
+        var cart = new Cart(req.session.cart);
+
+        console.log(cart);
+
+        res.render('cto/customdevops', {products: cart.generateArray(),username:username});
+    });
      app.get('/custom', isLoggedIn, function (req, res) {
         var username = req.user;
         var cart = new Cart(req.session.cart ? req.session.cart : {});
