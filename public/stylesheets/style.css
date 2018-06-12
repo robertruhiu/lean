@@ -609,3 +609,8 @@ button.btn.btn-previous:active:focus, button.btn.btn-previous.active:focus {
     height: 50%;
     width: 69%;
 }
+.soda{
+    border-radius: 0px;
+    border: 0px;
+    color: white;
+}

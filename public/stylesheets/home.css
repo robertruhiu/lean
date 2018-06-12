@@ -41,6 +41,18 @@
     border-radius: .0px;
     margin-top: -3%;
 }
+.jumbo5{
+
+    background-color: #ffffff;
+    border-radius: .0px;
+    margin-top: -5%;
+}
+.jumbo4{
+
+    background-color: #ffffff;
+    border-radius: .0px;
+    margin-top: -7%;
+}
 .jumbo2{
 
     background-color: #e1f2f678;
@@ -115,4 +127,8 @@
     margin-bottom: -1px;
     background-color: #fff;
     /* border: 1px solid rgba(0,0,0,.125); */
+}
+.proce{
+    margin-left: 35%;
+    width:32%;
 }
