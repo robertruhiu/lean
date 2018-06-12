@@ -25,6 +25,10 @@ module.exports = function (app, passport) {
         var messages = req.flash('error');
         res.render('users/signin', {layout: 'users',message: messages, hasErrors: messages.length >0 });
     });
+    app.get('/login', function (req, res) {
+        var messages = req.flash('error');
+        res.render('users/candidatelogin', {layout: 'users',message: messages, hasErrors: messages.length >0 });
+    });
 
     app.post('/login', passport.authenticate('local-login', {
         successRedirect: '/index',
