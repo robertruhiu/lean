@@ -304,19 +304,7 @@ a, a:hover, a:focus {
     border-color: #000000;
 }
 
-.bg-gradient {
-    color: #FFFFFF !important;
-    background: #07a7e3;
-    background: -moz-linear-gradient(-45deg, #07a7e3 0%, #32dac3 100%);
-    background: -webkit-linear-gradient(-45deg, #07a7e3 0%, #32dac3 100%);
-    background: linear-gradient(135deg, #07a7e3 0%, #32dac3 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$ qp-color-1, endColorstr=$ qp-color-2, GradientType=1);
-    -webkit-transition: opacity 0.2s ease-out;
-    -moz-transition: opacity 0.2s ease-out;
-    -o-transition: opacity 0.2s ease-out;
-    transition: opacity 0.2s ease-out;
 
-}
 
 .leo{
     border: 0px;

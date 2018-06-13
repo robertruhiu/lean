@@ -25,12 +25,12 @@ var projects = [
         projectname: 'Kuruka flex',
         type:'frontend',
         concept:'ui/ux',
-        description:'A representive of kuruka flex approaches you to create a website that embodies the feelings of modernism and coolness.The ui elements should make a users improve a users experience ',
+        description:'A representative of kuruka flex approaches you to create a website that embodies the feelings of modernism and coolness.The ui elements chosen to implement should make for a good users experience ',
         basic1:'Improved UI/UX',
         basic2:'Sign up for users at your Client\'s company',
         basic3:'Login (you are free to use a package such as Passport for Authentication)',
         basic4:'Integration with at least 3 exchanges (with Websocket API for their market data). Examples of such exchanges are Bitstamp, OKCoin, etc.',
-        advanced1:'Impliment javascript effects',
+        advanced1:'Implement javascript effects',
         advanced2:'Implement Jquery of choice'
 
 
