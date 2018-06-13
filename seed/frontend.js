@@ -21,7 +21,7 @@ var projects = [
 
     }),
     new Frontend({
-        imagePath: 'https://codeln.herokuapp.com/images/capture.PNG',
+        imagePath: 'https://cdn.dribbble.com/users/1833200/screenshots/4701866/shot.jpg',
         projectname: 'Kuruka flex',
         type:'frontend',
         concept:'ui/ux',

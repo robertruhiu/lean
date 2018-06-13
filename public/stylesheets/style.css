@@ -614,3 +614,6 @@ button.btn.btn-previous:active:focus, button.btn.btn-previous.active:focus {
     border: 0px;
     color: white;
 }
+.pro{
+    height: 100%;
+}
