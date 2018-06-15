@@ -45,7 +45,7 @@ module.exports = function (app, passport) {
         var messages = req.flash('error');
         res.render('users/signup', {layout: 'users',message: messages, hasErrors: messages.length >0 });
     });
-    app.post('/signup', passport.authenticate('local-signup', {
+    app.post('/signup', passport.authenticate('userlocal', {
         successRedirect: '/profile',
         failureRedirect: '/signup',
         failureFlash: true
