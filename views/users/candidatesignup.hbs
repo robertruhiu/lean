@@ -1,23 +1,10 @@
 <div class="container">
     <div class="row">
-        <div class="col-lg-8">
-            <div class="cardno great gr" >
-            <div class="card-body">
-
-                <img class="beer" src="https://cdn.dribbble.com/users/77598/screenshots/4308169/dribbble1.png">
-                <div class="h4" >Showcase your skills.</div>
-
-
-
-            </div>
-            </div>
-
-
-        </div>
         <div class="col-lg-4" style="margin-top: 6%">
-             <form action="/logincandidate" method="post">
-            <div class="form-group">
-                <h4>Login</h4>
+        </div>
+        <div class="col-lg-4 " style="margin-top: 6%">
+
+            <h4>Sign up candidates</h4>
                 {{#if hasErrors}}
                     <div class="alert alert-danger">
                         {{#each message}}
@@ -27,6 +14,10 @@
                     </div>
 
                     {{/if}}
+            <form id="signup" action="/candidatesignup" method="post">
+
+
+            <div class="form-group">
 
                 <label>Email</label>
                 <input type="email" id="inputEmail" required autofocus class="form-control" name="email">
@@ -35,15 +26,20 @@
                 <label>Password</label>
                 <input type="password" required class="form-control" name="password">
             </div>
+                <button type="submit"  class="btn btn-warning btn-lg">Signup</button>
 
-            <button type="submit" class="btn btn-warning btn-lg">Login</button>
+
         </form>
 
         <hr>
 
 
 
+
+
         </div>
+        <div class="col-lg-4"></div>
+
     </div>
 
 

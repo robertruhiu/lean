@@ -3,12 +3,11 @@ var Frontend = require('./models/frontend');
 var Backend = require('./models/backend');
 var Fullstack = require('./models/fullstack');
 var Devops = require('./models/devops');
-var Android = require('./models/android');
-var Ios = require('./models/ios');
 var Cart = require('../app/models/cart');
 var Project = require('../app/models/project');
 var flash = require('connect-flash');
 var Profile = require('./models/profile');
+var Candidate = require('./models/candidate');
 
 
 
@@ -25,18 +24,17 @@ module.exports = function (app, passport) {
         var messages = req.flash('error');
         res.render('users/signin', {layout: 'users',message: messages, hasErrors: messages.length >0 });
     });
-    app.get('/logincandidate', function (req, res) {
-        var messages = req.flash('error');
-        res.render('users/candidatelogin', {layout: 'users',message: messages, hasErrors: messages.length >0 });
-    });
-
-    app.post('/login', passport.authenticate('local-login', {
+    app.post('/login', passport.authenticate('userlogin', {
         successRedirect: '/index',
         failureRedirect: '/login',
         failureFlash: true
     }));
 
-    app.post('/logincandidate', passport.authenticate('local-login', {
+    app.get('/logincandidate', function (req, res) {
+        var messages = req.flash('error');
+        res.render('users/candidatelogin', {layout: 'users',message: messages, hasErrors: messages.length >0 });
+    });
+    app.post('/logincandidate', passport.authenticate('candidatelogin', {
         successRedirect: '/candidate',
         failureRedirect: '/logincandidate',
         failureFlash: true
@@ -47,25 +45,29 @@ module.exports = function (app, passport) {
         var messages = req.flash('error');
         res.render('users/signup', {layout: 'users',message: messages, hasErrors: messages.length >0 });
     });
-
     app.post('/signup', passport.authenticate('local-signup', {
         successRedirect: '/profile',
         failureRedirect: '/signup',
         failureFlash: true
     }));
 
-    app.get('/profile', function (req, res) {
-
-    app.get('/logincandidate', function (req, res) {
+    app.get('/candidatesignup', function (req, res) {
         var messages = req.flash('error');
-        res.render('users/candidatelogin', {layout: 'users',message: messages, hasErrors: messages.length >0 });
+        res.render('users/candidatesignup', {layout: 'users',message: messages, hasErrors: messages.length >0 });
     });
+    app.post('/candidatesignup', passport.authenticate('candidatelocal', {
+        successRedirect: '/',
+        failureRedirect: '/candidatesignup',
+        failureFlash: true
+    }));
+
+
+    app.get('/profile', function (req, res) {
 
         var username = req.user;
         var messages = req.flash('error');
         res.render('users/profile', {layout: 'users',username:username,message: messages, hasErrors: messages.length >0 });
     });
-
     app.post('/profile',function (req,res) {
 
         var username = req.user;
@@ -81,6 +83,8 @@ module.exports = function (app, passport) {
         })
 
     });
+
+
 
     app.get('/pricing', function (req, res) {
 
@@ -120,13 +124,13 @@ module.exports = function (app, passport) {
     });
 
     //candidates routes
-    app.get('/candidate',isLoggedIn ,function (req, res, next) {
+    app.get('/candidate',function (req, res, next) {
         var username = req.user;
 
         res.render('candidate/candidate', {layout: 'candidatelayout',username:username});
     });
 
-    app.get('/details',isLoggedIn , function (req, res, next) {
+    app.get('/details' , function (req, res, next) {
         var username = req.user;
 
         res.render('candidate/detailsproject', {layout: 'candidatelayout',username:username});
@@ -269,7 +273,7 @@ module.exports = function (app, passport) {
 
         res.render('cto/customdevops', {products: cart.generateArray(),username:username});
     });
-     app.get('/custom', isLoggedIn, function (req, res) {
+    app.get('/custom', isLoggedIn, function (req, res) {
         var username = req.user;
         var cart = new Cart(req.session.cart ? req.session.cart : {});
 
@@ -330,7 +334,26 @@ module.exports = function (app, passport) {
 
     });
 
+// ide entry
+    app.get('/idesignup', function (req, res) {
+        var messages = req.flash('error');
+        res.render('users/idesignup', {layout: 'users',message: messages, hasErrors: messages.length >0 });
+    });
+    app.post('/idesignup', passport.authenticate('idelocal', {
+        successRedirect: '/',
+        failureRedirect: '/idesignup',
+        failureFlash: true
+    }));
 
+    app.get('/idelogin', function (req, res) {
+        var messages = req.flash('error');
+        res.render('users/idelogin', {layout: 'users',message: messages, hasErrors: messages.length >0 });
+    });
+    app.post('/idelogin', passport.authenticate('idelogin', {
+        successRedirect: 'http://128.199.37.244:8080/dashboard/#/ide/che/wksp-ogjq',
+        failureRedirect: '/idelogin',
+        failureFlash: true
+    }));
 
 
 
@@ -348,4 +371,11 @@ function isLoggedIn(req, res, next) {
     }
 
     res.redirect('/login');
+}
+function CandidateisLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+
+    res.redirect('/logincandidate');
 }
