@@ -59,7 +59,7 @@ window.onload = function () {
             name: "metric",
             axisYType: "secondary",
             dataPoints: [
-                {y: 4, label: "Language Knowledge"},
+                {y: 6, label: "Language Knowledge"},
                 {y: 6, label: "Problem Solving"},
                 {y: 5, label: "Comment Completeness"},
                 {y: 3, label: "Code Readability"},
