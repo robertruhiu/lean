@@ -4,13 +4,13 @@ window.onload = function () {
     let config = {
         type: 'line',
         data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: ['January', 'February', 'March', 'April', 'May', 'June'],
 
             datasets: [{
                 label: 'github activity',
                 backgroundColor: window.chartColors.blue,
                 borderColor: window.chartColors.green,
-                data: [14, 6, 22, 17, 10, 25, 30],
+                data: [1, 10, 6, 11, 0, 2],
 
 
             }]

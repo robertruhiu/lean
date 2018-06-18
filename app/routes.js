@@ -122,6 +122,11 @@ module.exports = function (app, passport) {
 
         res.render('cto/fullreport' ,{layout: 'reportlayout'});
     });
+    app.get('/report', function (req, res, next) {
+
+
+        res.render('cto/report' ,{layout: 'reportlayout'});
+    });
 
     //candidates routes
     app.get('/candidate',function (req, res, next) {
