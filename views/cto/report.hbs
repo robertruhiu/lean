@@ -1,28 +1,14 @@
 
-<div class="row">
-    <div class="col-lg-12">
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Overview</a>
+    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Measures</a>
 
-        <div class="tabbable-panel nel">
-            <div class="tabbable-line">
-                <!---tabs-->
-                <ul class="nav nav-tabs ">
-                    <li class="active">
-                        <a href="#tab_default_1" data-toggle="tab">
-                            <b>Overview</b></a>
-                    </li>
-                    <li>
-                        <a href="#tab_default_2" data-toggle="tab">
-                            <b>Measures </b></a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-        <!---content-->
-        <div class="tab-content">
-            <!---overview-->
-            <div class="tab-pane active" id="tab_default_1">
-                <div class="content" style="margin-top: 1%">
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <div class="content" style="margin-top: 1%">
                     <div class="container-fluid">
                         <!---intro--->
                         <div class='row' style="padding-top: 11px">
@@ -253,10 +239,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!----measures---->
-            <div class="tab-pane " id="tab_default_2">
-                <div class="content" style="margin-top: 1%">
+
+  </div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+      <div class="content" style="margin-top: 1%">
                     <div class="container-fluid">
                         <div class="row">
 
@@ -449,11 +435,9 @@
 
                     </div>
                 </div>
-            </div>
 
-        </div>
+  </div>
 
-    </div>
 </div>
 
 
