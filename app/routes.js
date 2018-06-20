@@ -355,7 +355,7 @@ module.exports = function (app, passport) {
         res.render('users/idelogin', {layout: 'users',message: messages, hasErrors: messages.length >0 });
     });
     app.post('/idelogin', passport.authenticate('idelogin', {
-        successRedirect: 'http://128.199.37.244:8080/dashboard/#/ide/che/wksp-ogjq',
+        successRedirect: 'http://128.199.37.244:8080/dashboard/#/ide/che/java-test',
         failureRedirect: '/idelogin',
         failureFlash: true
     }));
