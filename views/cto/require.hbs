@@ -3,81 +3,81 @@
     <h5>Candidates requirements</h5>
     {{#if username}}
 
-    <div class="panel-body">
-      <p>Username: {{username.local.username}}</p>
+        <div class="panel-body">
+            <p>Username: {{username.local.username}}</p>
 
-    </div>
+        </div>
+
+
+    {{else}}
+
+
+        <p>Sign in and view your profile!</p>
+        <p>
+            <a href="/signin" class="btn btn-primary btn-lg" role="button">
+                <span class="glyphicon glyphicon-user"></span>
+                Sign in!
+            </a>
+        </p>
+
+    {{/if}}
+</div>
+{{# if products }}
+    <div class="row">
+    {{# each products}}
+            <div class="col-lg-4">
+                <div class="card cardno1">
+                    <div class="card-body">
+                        <div class="text-center h5"><strong>Basic features</strong></div>
+                        <p class="h6">{{this.basic1}}</p>
+                        <p class="h6">{{this.basic2}}</p>
+                        <p class="h6">{{this.basic3}}</p>
+                        <p class="h6">{{this.basic4}}</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card cardno1">
+                    <div class="card-body">
+                        <div class="text-center h5"><strong>Constrains</strong></div>
+                        <p class="h6">{{this.constrain1}}</p>
+                        <p class="h6">{{this.constrain2}}</p>
+                        <p class="h6">{{this.constrain3}}</p>
+                        <p class="h6">{{this.constrain4}}</p>
+                        <p class="h6">{{this.constrain5}}</p>
+                        <p class="h6">{{this.constrain6}}</p>
+                        <p class="h6">{{this.constrain7}}</p>
+                        <p class="h6">{{this.constrain8}}</p>
+                        <p class="h6">{{this.constrain9}}</p>
+                        <p class="h6">{{this.constrain10}}</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card cardno1">
+                    <div class="card-body">
+                        <div class="text-center h5"><strong>Advanced features</strong></div>
+                        <p class="h6">{{this.advanced1}}</p>
+                        <p class="h6">{{this.advanced2}}</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="float-right" style="margin-left: 80%">
+                <a class="btn btn-primary " href="/custom" role="button">Previous</a>
+                <a class="btn btn-success" href="/invites" role="button">Next</a>
+            </div>
+    {{/each}}
 
 
 {{else}}
-
-
-    <p>Sign in and view your profile!</p>
-    <p>
-      <a href="/signin" class="btn btn-primary btn-lg" role="button">
-        <span class="glyphicon glyphicon-user"></span>
-        Sign in!
-      </a>
-    </p>
-
-{{/if}}
-</div>
-        {{# if products }}
-            <div class="row">
-            {{# each products}}
-                <div class="col-lg-4">
-                    <div class="card cardno1">
-                        <div class="card-body">
-                            <div class="text-center h5"><strong>Basic features</strong></div>
-                            <p class="h6">{{this.basic1}}</p>
-                            <p class="h6">{{this.basic2}}</p>
-                            <p class="h6">{{this.basic3}}</p>
-                            <p class="h6">{{this.basic4}}</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card cardno1">
-                        <div class="card-body">
-                            <div class="text-center h5"><strong>Constrains</strong></div>
-                            <p class="h6">{{this.constrain1}}</p>
-                            <p class="h6">{{this.constrain2}}</p>
-                            <p class="h6">{{this.constrain3}}</p>
-                            <p class="h6">{{this.constrain4}}</p>
-                            <p class="h6">{{this.constrain5}}</p>
-                            <p class="h6">{{this.constrain6}}</p>
-                            <p class="h6">{{this.constrain7}}</p>
-                            <p class="h6">{{this.constrain8}}</p>
-                            <p class="h6">{{this.constrain9}}</p>
-                            <p class="h6">{{this.constrain10}}</p>
-
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-lg-4">
-                     <div class="card cardno1">
-                         <div class="card-body">
-                             <div class="text-center h5"><strong>Advanced features</strong></div>
-                             <p class="h6">{{this.advanced1}}</p>
-                             <p class="h6">{{this.advanced2}}</p>
-
-                         </div>
-                     </div>
-                 </div>
-                <div class="float-right" style="margin-left: 80%">
-                    <a class="btn btn-primary "   href="/custom" role="button">Previous</a>
-                    <a class="btn btn-success"  href="/invites" role="button">Next</a>
-                </div>
-            {{/each}}
-
-
-        {{else}}
-            <div class="row">
-                <div class="col-sm-6 col-md-6">
-                    <h2>No project choosen</h2>
-                </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-6">
+                <h2>No project choosen</h2>
             </div>
-        {{/if}}
+        </div>
+{{/if}}
 
 

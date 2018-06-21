@@ -4,28 +4,28 @@
 
     {{#if username}}
 
-    <div class="panel-body">
-      <p>Username: {{username.local.username}}</p>
+        <div class="panel-body">
+            <p>Username: {{username.local.username}}</p>
 
-    </div>
-
-
-{{else}}
+        </div>
 
 
-    <p>Sign in and view your profile!</p>
-    <p>
-      <a href="/signin" class="btn btn-primary btn-lg" role="button">
-        <span class="glyphicon glyphicon-user"></span>
-        Sign in!
-      </a>
-    </p>
+    {{else}}
 
-{{/if}}
+
+        <p>Sign in and view your profile!</p>
+        <p>
+            <a href="/signin" class="btn btn-primary btn-lg" role="button">
+                <span class="glyphicon glyphicon-user"></span>
+                Sign in!
+            </a>
+        </p>
+
+    {{/if}}
 
 </div>
 <div class="row">
-    <div class="col-lg-3 " >
+    <div class="col-lg-3 ">
         <a href="/frontend">
             <div class="card card1 leo" style="background-color:#00BAD7">
                 <div class="card-body">
@@ -37,7 +37,7 @@
     </div>
     <div class="col-lg-3 ">
         <a href="/backend">
-            <div class="card card1 leo"style="background-color:#40CB88 ">
+            <div class="card card1 leo" style="background-color:#40CB88 ">
                 <div class="card-body">
                     <h5 class="card-title cardtitle1" style="color: white"> Backend</h5>
 
@@ -47,7 +47,7 @@
     </div>
     <div class="col-lg-3 ">
         <a href="/fullstack">
-            <div class="card card1 leo"style="background-color:#B080D6 ">
+            <div class="card card1 leo" style="background-color:#B080D6 ">
                 <div class="card-body">
                     <h5 class="card-title cardtitle1" style="color: white"> Full stack</h5>
 
@@ -57,7 +57,7 @@
     </div>
     <div class="col-lg-3 ">
         <a href="/devops">
-            <div class="card card1 leo"style="background-color:#7BD749 ">
+            <div class="card card1 leo" style="background-color:#7BD749 ">
                 <div class="card-body">
                     <h5 class="card-title cardtitle1" style="color: white"> Devops</h5>
 
@@ -78,11 +78,11 @@
 
 <div class="row">
     {{# each projects}}
-    {{# each this.items}}
+        {{# each this.items}}
 
 
-                <div class="col-lg-3">
-                    <a href="/project">
+            <div class="col-lg-3">
+                <a href="/project">
                     <div class="card ml ">
                         <div class="card-body">
                             <h5 class="card-title">{{this.item.projectname}}</h5>
@@ -90,15 +90,15 @@
                             <p class="card-text">Candidates: 20</p>
                         </div>
                     </div>
-                    </a>
-                </div>
+                </a>
+            </div>
 
 
 
 
         {{/each}}
-        {{/each}}
-     </div>
+    {{/each}}
+</div>
 
 
 

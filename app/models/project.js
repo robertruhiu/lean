@@ -3,9 +3,8 @@ var Schema = mongoose.Schema;
 var projectSchema = mongoose.Schema;
 
 var project = new projectSchema({
-    user:{type:Schema.Types.ObjectId,ref:'User'},
-    cart:{type:Object,required:true}
-
+    user: {type: Schema.Types.ObjectId, ref: 'User'},
+    cart: {type: Object, required: true}
 
 
 });
