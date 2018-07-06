@@ -123,7 +123,7 @@ body {
 
 .profficiencycard {
     height: 119px;
-    max-width: 23%;
+    max-width: 24%;
     margin-right: 10px;
     box-shadow: 0 9px 23px rgba(0, 0, 0, 0.09), 0 5px 5px rgba(0, 0, 0, 0.06) !important;
 }
@@ -496,18 +496,11 @@ button.btn.btn-previous:active:focus, button.btn.btn-previous.active:focus {
 }
 
 .tabbable-line > .nav-tabs > li.active {
-    border-bottom: 4px solid #4982ff;
+    color:#4982ff;
     position: relative;
 }
 
-.tabbable-line > .nav-tabs > li.active > a {
-    border: 0;
-    color: #333333;
-}
 
-.tabbable-line > .nav-tabs > li.active > a > i {
-    color: #404040;
-}
 
 .tabbable-line > .tab-content {
     margin-top: -3px;

@@ -1,34 +1,16 @@
 <div class="row">
     <div class="col-lg-12">
-
-        <div class="tabbable-panel nel">
-            <div class="tabbable-line">
-                <!---tabs-->
-                <ul class="nav nav-tabs ">
-                    <li class="active">
-                        <a href="#tab_default_1" data-toggle="tab">
-                            <b>Overview</b></a>
-                    </li>
-                    <li>
-                        <a href="#tab_default_2" data-toggle="tab">
-                            <b>Measures </b></a>
-                    </li>
-                    <li>
-                        <a href="#tab_default_3" data-toggle="tab">
-                            <b>Developer workflow</b></a>
-                    </li>
-                    <li>
-                        <a href="#tab_default_4" data-toggle="tab">
-                            <b>Project review</b></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!---content-->
-        <div class="tab-content">
-            <!---overview-->
-            <div class="tab-pane active" id="tab_default_1">
-                <div class="content" style="margin-top: 1%">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Overview</a>
+    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Measures</a>
+    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Developer workflow</a>
+      <a class="nav-item nav-link" id="nav-demo-tab" data-toggle="tab" href="#nav-demo" role="tab" aria-controls="nav-demo" aria-selected="false">Project review</a>
+  </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <div class="content" style="margin-top: 1%">
                     <div class="container-fluid">
                         <!---intro--->
                         <div class='row' style="padding-top: 25px">
@@ -94,41 +76,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!---overview--->
-                        <div class="reportspace">
-                            <div>
 
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <h5 class="text-center">Base language used</h5>
-                                        <div class="text-center">
-                                            Javascript (es6)
-
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <h5 class="text-center">Frameworks used</h5>
-                                        <div class="text-center">
-                                            Angular
-                                            git
-                                            heroku
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-lg-4">
-                                        <div class="text-center">
-                                            <h5 class="text-center">Time alloted</h5>
-                                            2 hrs
-
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
 
                         <!---proffieciency--->
                         <div class="reportspace">
@@ -339,10 +287,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!----measures---->
-            <div class="tab-pane " id="tab_default_2">
-                <div class="content" style="margin-top: 1%">
+  </div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+      <div class="content" style="margin-top: 1%">
                     <div class="container-fluid">
                         <div class="row">
 
@@ -538,10 +485,9 @@
 
                     </div>
                 </div>
-            </div>
-            <!---Workflow-->
-            <div class="tab-pane " id="tab_default_3">
-                <div class="row" style="margin-top: 1%">
+  </div>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+      <div class="row" style="margin-top: 1%">
                     <div class="col-lg-3">
                         <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
 
@@ -607,10 +553,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!----Project review--->
-            <div class="tab-pane" id="tab_default_4">
-                <div class="row" style="margin-top: 1%">
+  </div>
+    <div class="tab-pane fade" id="nav-demo" role="tabpanel" aria-labelledby="nav-demo-tab">
+        <div class="row" style="margin-top: 1%">
                     <div class="col-3">
                         <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
                             <a class="nav-link active" style="border-radius: 0rem" data-toggle="pill"
@@ -633,9 +578,9 @@
                         <div class="tab-content">
                             <div class="tab-pane  active" id="v-pills-demo" role="tabpanel"
                                  aria-labelledby="v-pills-demo-tab">
-                                <a class="portfolio-item" href="https://todo-react-redux.firebaseapp.com/sign-in">
+                                <a class="portfolio-item" href="https://cryptoprize.herokuapp.com/">
                                     <div class="container1">
-                                        <img src="https://codeln.herokuapp.com/images/demo.png" alt="Avatar"
+                                        <img src="https://codeln.herokuapp.com/images/capture.PNG" alt="Avatar"
                                              class="image">
                                         <div class="overlay">
                                             <div class="text">Live demo</div>
@@ -675,9 +620,8 @@
                         </div>
                     </div>
                 </div>
-
-            </div>
-        </div>
+    </div>
+</div>
 
     </div>
 </div>

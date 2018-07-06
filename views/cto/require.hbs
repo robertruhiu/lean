@@ -25,7 +25,7 @@
 {{# if products }}
     <div class="row">
     {{# each products}}
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="card cardno1">
                     <div class="card-body">
                         <div class="text-center h5"><strong>Basic features</strong></div>
@@ -37,26 +37,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="card cardno1">
-                    <div class="card-body">
-                        <div class="text-center h5"><strong>Constrains</strong></div>
-                        <p class="h6">{{this.constrain1}}</p>
-                        <p class="h6">{{this.constrain2}}</p>
-                        <p class="h6">{{this.constrain3}}</p>
-                        <p class="h6">{{this.constrain4}}</p>
-                        <p class="h6">{{this.constrain5}}</p>
-                        <p class="h6">{{this.constrain6}}</p>
-                        <p class="h6">{{this.constrain7}}</p>
-                        <p class="h6">{{this.constrain8}}</p>
-                        <p class="h6">{{this.constrain9}}</p>
-                        <p class="h6">{{this.constrain10}}</p>
 
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card cardno1">
+            <div class="col-lg-6">
+                <div class="card cardno1" style="height: 100%">
                     <div class="card-body">
                         <div class="text-center h5"><strong>Advanced features</strong></div>
                         <p class="h6">{{this.advanced1}}</p>
@@ -65,9 +48,9 @@
                     </div>
                 </div>
             </div>
-            <div class="float-right" style="margin-left: 80%">
+            <div class="float-right" style="margin-left: 80%;margin-top: 2%;">
                 <a class="btn btn-primary " href="/custom" role="button">Previous</a>
-                <a class="btn btn-success" href="/invites" role="button">Next</a>
+                <a class="btn btn-success " href="/invites" role="button">Next   </a>
             </div>
     {{/each}}
 
