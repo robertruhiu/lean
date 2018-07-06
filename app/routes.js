@@ -28,11 +28,11 @@ module.exports = function (app, passport) {
         failureFlash: true
     }));
 
-    app.get('/logincandidate', function (req, res) {
+    app.get('/dev', function (req, res) {
         var messages = req.flash('error');
         res.render('users/candidatelogin', {layout: 'users', message: messages, hasErrors: messages.length > 0});
     });
-    app.post('/logincandidate', passport.authenticate('candidatelogin', {
+    app.post('/dev', passport.authenticate('candidatelogin', {
         successRedirect: '/candidate',
         failureRedirect: '/logincandidate',
         failureFlash: true
