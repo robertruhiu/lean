@@ -119,7 +119,7 @@ module.exports = function (app, passport) {
         res.render('cto/project', {username: username});
     });
 
-    app.get('/fullreport', isLoggedIn, function (req, res, next) {
+    app.get('/fullreport', function (req, res, next) {
 
 
         res.render('cto/fullreport', {layout: 'reportlayout'});
